@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://ch5ws708jmm0v"]
+
+[ext_resource type="Texture2D" uid="uid://dx5j52a13hs0s" path="res://backgroundGray.jpg" id="1_xu8nn"]
+[ext_resource type="Texture2D" uid="uid://bg6kuyk4kotyf" path="res://alvo vermelho.png" id="2_a6mve"]
+[ext_resource type="Script" path="res://area_2d.gd" id="3_i2c5p"]
+[ext_resource type="Script" path="res://sprite_2d.gd" id="3_wob41"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gakay"]
+size = Vector2(500, 500)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -168.0
+offset_top = -105.0
+offset_right = 1752.0
+offset_bottom = 975.0
+texture = ExtResource("1_xu8nn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(130, 82)
+scale = Vector2(0.0858598, 0.0783937)
+texture = ExtResource("2_a6mve")
+script = ExtResource("3_wob41")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D"]
+script = ExtResource("3_i2c5p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+shape = SubResource("RectangleShape2D_gakay")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 504.0
+offset_right = 617.0
+offset_bottom = 39.0
+text = "Score: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
